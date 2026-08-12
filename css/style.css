@@ -1,0 +1,300 @@
+/* ================================
+   DIU Bogura Association
+   Main Stylesheet
+================================ */
+
+/* ---------- Basic Reset ---------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    color: #222;
+    background-color: #f5f7fa;
+}
+
+/* ---------- Navigation Bar ---------- */
+
+header {
+    background: #0b2d5c;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+}
+
+nav {
+    max-width: 1200px;
+    margin: auto;
+    padding: 15px 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 22px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ffd43b;
+}
+
+/* ---------- Hero Section ---------- */
+
+.hero {
+    min-height: 570px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            rgba(11, 45, 92, 0.82),
+            rgba(11, 45, 92, 0.82)
+        ),
+        url("../images/diu-bogura.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    max-width: 850px;
+    padding: 30px;
+    color: white;
+}
+
+.hero-content h1 {
+    font-size: 52px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 19px;
+    margin-bottom: 30px;
+}
+
+/* ---------- Button ---------- */
+
+.btn {
+    display: inline-block;
+    padding: 13px 30px;
+
+    background: #ffd43b;
+    color: #0b2d5c;
+
+    text-decoration: none;
+    font-weight: bold;
+
+    border-radius: 6px;
+
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: white;
+    transform: translateY(-2px);
+}
+
+/* ---------- Common Sections ---------- */
+
+.about,
+.services,
+.events {
+    max-width: 1100px;
+    margin: auto;
+    padding: 70px 25px;
+    text-align: center;
+}
+
+.about h2,
+.services h2,
+.events h2 {
+    color: #0b2d5c;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.about p {
+    max-width: 800px;
+    margin: auto;
+    color: #555;
+    font-size: 17px;
+}
+
+/* ---------- Service Cards ---------- */
+
+.service-container {
+    margin-top: 35px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.service-card {
+    background: white;
+    padding: 30px 20px;
+
+    border-radius: 10px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+
+    transition: 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.13);
+}
+
+.service-card h3 {
+    color: #0b2d5c;
+    margin-bottom: 12px;
+    font-size: 21px;
+}
+
+.service-card p {
+    color: #666;
+}
+
+/* ---------- Events ---------- */
+
+.events {
+    background: #eef3f9;
+    max-width: none;
+}
+
+.event-card {
+    max-width: 700px;
+    margin: 30px auto 0;
+
+    background: white;
+    padding: 30px;
+
+    border-radius: 10px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.event-card h3 {
+    color: #0b2d5c;
+    margin-bottom: 10px;
+}
+
+.event-card p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.event-card a {
+    color: #0b2d5c;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.event-card a:hover {
+    color: #e0a800;
+}
+
+/* ---------- Footer ---------- */
+
+footer {
+    background: #071d3b;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+footer p {
+    font-size: 14px;
+}
+
+/* ---------- Responsive Design ---------- */
+
+@media (max-width: 900px) {
+
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .hero-content h1 {
+        font-size: 40px;
+    }
+
+    .service-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .logo {
+        font-size: 19px;
+    }
+
+    .nav-links {
+        gap: 8px;
+    }
+
+    .nav-links a {
+        font-size: 13px;
+    }
+
+    .hero {
+        min-height: 480px;
+    }
+
+    .hero-content h1 {
+        font-size: 32px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+    }
+
+    .about h2,
+    .services h2,
+    .events h2 {
+        font-size: 27px;
+    }
+}
