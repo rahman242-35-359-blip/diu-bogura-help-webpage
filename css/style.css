@@ -130,15 +130,17 @@ nav {
 
 /* ---------- Common Sections ---------- */
 
+.container,
 .about,
 .services,
 .events {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: auto;
-    padding: 70px 25px;
+    padding: 60px 25px;
     text-align: center;
 }
 
+.section-title,
 .about h2,
 .services h2,
 .events h2 {
@@ -188,6 +190,42 @@ nav {
 
 .service-card p {
     color: #666;
+}
+
+/* ---------- Committee Grid & Poster Cards ---------- */
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    padding: 20px 0;
+}
+
+.card {
+    background: transparent;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    cursor: pointer;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+    transition: transform 0.4s ease;
+}
+
+/* Hover Effect */
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+}
+
+.card:hover img {
+    transform: scale(1.03);
 }
 
 /* ---------- Events ---------- */
@@ -292,9 +330,15 @@ footer p {
         font-size: 16px;
     }
 
+    .section-title,
     .about h2,
     .services h2,
     .events h2 {
         font-size: 27px;
+    }
+
+    .grid-container {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
     }
 }
