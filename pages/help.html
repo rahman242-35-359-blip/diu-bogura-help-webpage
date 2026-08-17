@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help & Support | DIU Bogura Association</title>
+    <link rel="stylesheet" href="../css/help.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="../index.html" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: white;">
+                    <img src="../images/logo.jpg" alt="Logo" class="logo-img" style="height: 40px; width: auto; border-radius: 5px;" onerror="this.onerror=null; this.src='../images/logo.png';">
+                    <span>DIU Bogura Association</span>
+                </a>
+            </div>
+
+            <!-- Navigation Links (Fix for Not Reachable issue) -->
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="committee.html">Committee</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="notices.html">Notices</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="help.html" class="active">Help</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="help-page">
+        <!-- Hero Section -->
+        <section class="help-hero">
+            <div class="help-hero-content">
+                <span class="small-title">DIU BOGURA ASSOCIATION</span>
+                <h1>How Can We Help You?</h1>
+                <p>Connecting, supporting and empowering Bogura students at Daffodil International University.</p>
+            </div>
+        </section>
+
+        <!-- Help Categories Section -->
+        <section class="help-categories-section">
+            <div class="category-cards-wrapper">
+                
+                <!-- Academic Help -->
+                <div class="help-card" id="academic">
+                    <div class="icon">📚</div>
+                    <h3>Academic Help</h3>
+                    <p>Get academic guidance, study notes, course advice, and peer support from senior students of Bogura Association.</p>
+                    <a href="#contact-form" class="card-btn">Request Support</a>
+                </div>
+
+                <!-- Accommodation -->
+                <div class="help-card" id="accommodation">
+                    <div class="icon">🏠</div>
+                    <h3>Accommodation</h3>
+                    <p>Find mess, flat, hostel, and seat-to-let information around campus easily from our dedicated community group.</p>
+                    <a href="https://facebook.com/groups/1045509233090300/" target="_blank" class="card-btn external">Visit To-Let Group ↗</a>
+                </div>
+
+                <!-- Emergency Help -->
+                <div class="help-card" id="emergency">
+                    <div class="icon">🚨</div>
+                    <h3>Emergency Help</h3>
+                    <p>Need urgent assistance, medical support, or emergency contact on campus? Reach out to our public relations secretary.</p>
+                    <a href="tel:01967344149" class="card-btn emergency-btn">📞 Call: 01967344149</a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Help Message Form & Social Connect -->
+        <section class="help-form-section" id="contact-form">
+            <div class="form-container">
+                <h2>Send Us a Message</h2>
+                <p>Have any questions or need specific help? Fill out the form below and we will get back to you via email.</p>
+
+                <!-- Formspree Form Integration -->
+                <form action="https://formspree.io/f/mdenwaww" method="POST" id="helpForm">
+                    <!-- Corrected form-group wrapper -->
+                    <div class="form-group">
+                        <label for="name">Your Full Name</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Your Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="category">Help Category</label>
+                        <select id="category" name="category" required>
+                            <option value="" disabled selected>Select category</option>
+                            <option value="Academic Help">Academic Help</option>
+                            <option value="Accommodation">Accommodation</option>
+                            <option value="Emergency Support">Emergency Support</option>
+                            <option value="General Query">General Query</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">How can we assist you?</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Write your problem or message in detail..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Send Message</button>
+                    <div id="formStatus" class="form-status"></div>
+                </form>
+            </div>
+
+            <!-- Social Connect Card -->
+            <div class="social-connect-card">
+                <h3>Stay Connected</h3>
+                <p>Join our official Facebook page to stay updated on notices, support, and community events.</p>
+                <a href="https://www.facebook.com/profile.php?id=100089359437729" target="_blank" class="fb-btn">
+                    Official Facebook Page ↗
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="events-footer">
+        <p>© 2026 DIU Bogura Association. All Rights Reserved.</p>
+    </footer>
+
+    <script src="../js/help.js"></script>
+</body>
+</html>

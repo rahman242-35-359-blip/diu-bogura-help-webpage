@@ -1,0 +1,320 @@
+/* Reset and General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f8fafc;
+}
+
+/* Header & Navigation Bar (২য় ছবির মতো ডিজাইনের জন্য) */
+header {
+    background-color: #0b2545; /* Dark Blue */
+    padding: 15px 5%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.logo-img {
+    height: 45px;
+    width: auto;
+    border-radius: 6px;
+    object-fit: contain;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+    align-items: center;
+}
+
+.nav-links li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+    color: #38bdf8; /* Highlight Sky Blue Color */
+}
+
+/* Response Layout for Mobile Screen */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+}
+
+/* Help Page Hero Section */
+.help-page {
+    min-height: 80vh;
+}
+
+.help-hero {
+    background: linear-gradient(135deg, #0b2545 0%, #134074 100%);
+    color: #ffffff;
+    text-align: center;
+    padding: 60px 20px 80px 20px;
+}
+
+.help-hero-content .small-title {
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    color: #ee6c4d;
+    font-weight: 700;
+}
+
+.help-hero-content h1 {
+    font-size: 2.5rem;
+    margin: 10px 0;
+}
+
+.help-hero-content p {
+    font-size: 1.1rem;
+    color: #e0e1dd;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Category Cards Section */
+.help-categories-section {
+    max-width: 1100px;
+    margin: -40px auto 40px auto;
+    padding: 0 20px;
+}
+
+.category-cards-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.help-card {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.help-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+}
+
+.help-card .icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.help-card h3 {
+    color: #0b2545;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.help-card p {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.card-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #0b2545;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: background 0.3s ease;
+}
+
+.card-btn:hover {
+    background-color: #134074;
+}
+
+.card-btn.external {
+    background-color: #1877f2;
+}
+
+.card-btn.external:hover {
+    background-color: #145dbf;
+}
+
+.card-btn.emergency-btn {
+    background-color: #d90429;
+}
+
+.card-btn.emergency-btn:hover {
+    background-color: #b00020;
+}
+
+/* Form Section */
+.help-form-section {
+    max-width: 900px;
+    margin: 40px auto 60px auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+}
+
+@media (max-width: 768px) {
+    .help-form-section {
+        grid-template-columns: 1fr;
+    }
+}
+
+.form-container {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+.form-container h2 {
+    color: #0b2545;
+    margin-bottom: 5px;
+}
+
+.form-container p {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #333;
+}
+
+.form-group input, 
+.form-group select, 
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.form-group input:focus, 
+.form-group select:focus, 
+.form-group textarea:focus {
+    border-color: #0b2545;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #0b2545;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #134074;
+}
+
+.form-status {
+    margin-top: 15px;
+    font-size: 0.95rem;
+    text-align: center;
+}
+
+/* Social Connect Card */
+.social-connect-card {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    text-align: center;
+    height: fit-content;
+}
+
+.social-connect-card h3 {
+    color: #0b2545;
+    margin-bottom: 10px;
+}
+
+.social-connect-card p {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+.fb-btn {
+    display: block;
+    padding: 12px;
+    background-color: #1877f2;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+.fb-btn:hover {
+    background-color: #145dbf;
+}
+
+/* Footer Style */
+.events-footer {
+    background-color: #0b2545;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+}

@@ -22,6 +22,7 @@ body {
     background-color: #f5f7fa;
 }
 
+
 /* ---------- Navigation Bar ---------- */
 
 header {
@@ -67,6 +68,7 @@ nav {
     color: #ffd43b;
 }
 
+
 /* ---------- Hero Section ---------- */
 
 .hero {
@@ -106,6 +108,7 @@ nav {
     margin-bottom: 30px;
 }
 
+
 /* ---------- Button ---------- */
 
 .btn {
@@ -127,6 +130,7 @@ nav {
     background: white;
     transform: translateY(-2px);
 }
+
 
 /* ---------- Common Sections ---------- */
 
@@ -155,6 +159,7 @@ nav {
     color: #555;
     font-size: 17px;
 }
+
 
 /* ---------- Service Cards ---------- */
 
@@ -192,6 +197,7 @@ nav {
     color: #666;
 }
 
+
 /* ---------- Committee Grid & Poster Cards ---------- */
 
 .grid-container {
@@ -205,8 +211,13 @@ nav {
     background: transparent;
     border-radius: 12px;
     overflow: hidden;
+
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+
     cursor: pointer;
 }
 
@@ -214,58 +225,26 @@ nav {
     width: 100%;
     height: auto;
     display: block;
+
     border-radius: 12px;
+
     transition: transform 0.4s ease;
 }
 
+
 /* Hover Effect */
+
 .card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+
+    box-shadow:
+        0 12px 25px rgba(0, 0, 0, 0.3);
 }
 
 .card:hover img {
     transform: scale(1.03);
 }
 
-/* ---------- Events ---------- */
-
-.events {
-    background: #eef3f9;
-    max-width: none;
-}
-
-.event-card {
-    max-width: 700px;
-    margin: 30px auto 0;
-
-    background: white;
-    padding: 30px;
-
-    border-radius: 10px;
-
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-}
-
-.event-card h3 {
-    color: #0b2d5c;
-    margin-bottom: 10px;
-}
-
-.event-card p {
-    color: #666;
-    margin-bottom: 20px;
-}
-
-.event-card a {
-    color: #0b2d5c;
-    font-weight: bold;
-    text-decoration: none;
-}
-
-.event-card a:hover {
-    color: #e0a800;
-}
 
 /* ---------- Footer ---------- */
 
@@ -279,6 +258,7 @@ footer {
 footer p {
     font-size: 14px;
 }
+
 
 /* ---------- Responsive Design ---------- */
 
@@ -303,6 +283,7 @@ footer p {
         grid-template-columns: 1fr;
     }
 }
+
 
 @media (max-width: 600px) {
 
@@ -338,473 +319,9 @@ footer p {
     }
 
     .grid-container {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-template-columns:
+            repeat(auto-fit, minmax(200px, 1fr));
+
         gap: 15px;
     }
-    /* =========================================
-   EVENTS PAGE
-========================================= */
-
-.events-page {
-    background: #f6f8fb;
-    min-height: 100vh;
-    padding-bottom: 80px;
-}
-
-
-/* =========================================
-   EVENTS HERO
-========================================= */
-
-.events-hero {
-    min-height: 430px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    text-align: center;
-
-    padding: 80px 20px;
-
-    background:
-        linear-gradient(
-            rgba(8, 31, 56, 0.78),
-            rgba(8, 31, 56, 0.90)
-        ),
-        url("../images/events/heritage-fair-2025.jpg");
-
-    background-size: cover;
-    background-position: center;
-
-    color: white;
-}
-
-
-.events-hero-content {
-    max-width: 800px;
-}
-
-
-.small-title {
-    display: inline-block;
-
-    padding: 8px 18px;
-
-    border: 1px solid rgba(255,255,255,0.4);
-
-    border-radius: 50px;
-
-    font-size: 13px;
-
-    letter-spacing: 1.5px;
-
-    margin-bottom: 20px;
-
-    background: rgba(255,255,255,0.10);
-
-    backdrop-filter: blur(8px);
-}
-
-
-.events-hero h1 {
-    font-size: clamp(42px, 6vw, 72px);
-
-    margin: 0 0 18px;
-
-    font-weight: 800;
-
-    letter-spacing: -2px;
-}
-
-
-.events-hero p {
-    font-size: 18px;
-
-    line-height: 1.8;
-
-    color: #e8eef5;
-
-    max-width: 650px;
-
-    margin: auto;
-}
-
-
-/* =========================================
-   EVENTS INTRO
-========================================= */
-
-.events-intro {
-    width: min(1000px, 90%);
-
-    margin: -55px auto 55px;
-
-    position: relative;
-
-    background: white;
-
-    padding: 45px;
-
-    border-radius: 25px;
-
-    text-align: center;
-
-    box-shadow: 0 15px 50px rgba(0,0,0,0.08);
-}
-
-
-.events-intro h2 {
-    font-size: 34px;
-
-    color: #102a43;
-
-    margin-bottom: 15px;
-}
-
-
-.events-intro p {
-    max-width: 750px;
-
-    margin: auto;
-
-    color: #667085;
-
-    line-height: 1.8;
-}
-
-
-/* =========================================
-   EVENT CARD
-========================================= */
-
-.event-card {
-    width: min(1150px, 92%);
-
-    margin: 0 auto 45px;
-
-    display: grid;
-
-    grid-template-columns: 1fr 1fr;
-
-    background: white;
-
-    border-radius: 28px;
-
-    overflow: hidden;
-
-    border: 1px solid #e8edf2;
-
-    box-shadow: 0 15px 45px rgba(15, 23, 42, 0.08);
-
-    transition: all 0.4s ease;
-}
-
-
-.event-card:hover {
-    transform: translateY(-8px);
-
-    box-shadow: 0 25px 60px rgba(15, 23, 42, 0.14);
-}
-
-
-/* =========================================
-   EVENT IMAGE
-========================================= */
-
-.event-image {
-    min-height: 390px;
-
-    position: relative;
-
-    overflow: hidden;
-}
-
-
-.event-image img {
-    width: 100%;
-
-    height: 100%;
-
-    object-fit: cover;
-
-    display: block;
-
-    transition: transform 0.6s ease;
-}
-
-
-.event-card:hover .event-image img {
-    transform: scale(1.06);
-}
-
-
-/* =========================================
-   DATE BADGE
-========================================= */
-
-.date-badge {
-    position: absolute;
-
-    top: 20px;
-
-    left: 20px;
-
-    padding: 10px 15px;
-
-    border-radius: 12px;
-
-    background: white;
-
-    color: #102a43;
-
-    font-size: 13px;
-
-    font-weight: 800;
-
-    box-shadow: 0 8px 25px rgba(0,0,0,0.18);
-}
-
-
-/* =========================================
-   EVENT CONTENT
-========================================= */
-
-.event-content {
-    padding: 45px;
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: center;
-}
-
-
-.event-category {
-    color: #168aad;
-
-    font-size: 12px;
-
-    font-weight: 800;
-
-    text-transform: uppercase;
-
-    letter-spacing: 1.5px;
-
-    margin-bottom: 12px;
-}
-
-
-.event-content h2 {
-    font-size: 32px;
-
-    line-height: 1.2;
-
-    color: #102a43;
-
-    margin: 0 0 18px;
-}
-
-
-.event-content p {
-    color: #667085;
-
-    line-height: 1.8;
-
-    margin-bottom: 12px;
-}
-
-
-/* =========================================
-   EVENT INFO
-========================================= */
-
-.event-info {
-    display: flex;
-
-    flex-wrap: wrap;
-
-    gap: 10px;
-
-    margin: 15px 0;
-}
-
-
-.event-info span {
-    background: #f1f7fa;
-
-    color: #344054;
-
-    padding: 8px 12px;
-
-    border-radius: 8px;
-
-    font-size: 13px;
-}
-
-
-.event-fee {
-    margin-top: 8px;
-
-    color: #344054;
-
-    font-size: 14px;
-}
-
-
-/* =========================================
-   EVENT BUTTON
-========================================= */
-
-.event-button {
-    display: inline-block;
-
-    width: fit-content;
-
-    margin-top: 15px;
-
-    padding: 11px 20px;
-
-    background: #102a43;
-
-    color: white;
-
-    text-decoration: none;
-
-    border-radius: 10px;
-
-    font-size: 14px;
-
-    font-weight: 700;
-
-    transition: all 0.3s ease;
-}
-
-
-.event-button:hover {
-    background: #168aad;
-
-    transform: translateX(5px);
-}
-
-
-/* =========================================
-   ALTERNATING CARDS
-========================================= */
-
-.event-card:nth-of-type(odd) .event-image {
-    order: 2;
-}
-
-.event-card:nth-of-type(odd) .event-content {
-    order: 1;
-}
-
-
-/* =========================================
-   EVENTS FOOTER
-========================================= */
-
-.events-footer {
-    text-align: center;
-
-    padding: 35px 20px;
-
-    color: #667085;
-
-    background: #ffffff;
-
-    border-top: 1px solid #edf0f5;
-}
-
-
-/* =========================================
-   RESPONSIVE DESIGN
-========================================= */
-
-@media (max-width: 800px) {
-
-    .events-hero {
-        min-height: 350px;
-
-        padding: 60px 20px;
-    }
-
-
-    .events-hero h1 {
-        font-size: 48px;
-    }
-
-
-    .events-hero p {
-        font-size: 15px;
-    }
-
-
-    .events-intro {
-        margin-top: -30px;
-
-        padding: 30px 20px;
-    }
-
-
-    .events-intro h2 {
-        font-size: 27px;
-    }
-
-
-    .event-card {
-        grid-template-columns: 1fr;
-
-        width: 92%;
-    }
-
-
-    .event-card:nth-of-type(odd) .event-image {
-        order: 1;
-    }
-
-
-    .event-card:nth-of-type(odd) .event-content {
-        order: 2;
-    }
-
-
-    .event-image {
-        min-height: 280px;
-    }
-
-
-    .event-content {
-        padding: 30px 25px;
-    }
-
-
-    .event-content h2 {
-        font-size: 27px;
-    }
-
-}
-
-
-@media (max-width: 500px) {
-
-    .events-hero h1 {
-        font-size: 40px;
-
-        letter-spacing: -1px;
-    }
-
-
-    .event-content {
-        padding: 25px 20px;
-    }
-
-
-    .event-info span {
-        font-size: 12px;
-    }
-
-}
 }

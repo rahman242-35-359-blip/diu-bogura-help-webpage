@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | DIU Bogura Association</title>
+    <link rel="stylesheet" href="../css/notices.css">
+    <style>
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px 0 50px 0;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .gallery-card {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            background: #fff;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.18);
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-card:hover .gallery-img {
+            transform: scale(1.08);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(11, 37, 69, 0.9));
+            color: white;
+            padding: 15px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-card:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-overlay h3 {
+            margin: 0 0 4px 0;
+            font-size: 1.05rem;
+            text-transform: capitalize;
+        }
+
+        .gallery-overlay span {
+            font-size: 0.85rem;
+            color: #d1e3ff;
+        }
+
+        /* Lightbox Modal */
+        .modal-lightbox {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .modal-lightbox.active {
+            display: flex;
+        }
+
+        .modal-lightbox img {
+            max-width: 90%;
+            max-height: 80vh;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(255,255,255,0.2);
+        }
+
+        .modal-caption {
+            color: #fff;
+            margin-top: 15px;
+            font-size: 1.2rem;
+            text-align: center;
+            text-transform: capitalize;
+        }
+
+        .close-lightbox {
+            position: absolute;
+            top: 25px;
+            right: 35px;
+            color: #fff;
+            font-size: 40px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="../index.html" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: white;">
+                    <img src="../images/logo.jpg" alt="Logo" class="logo-img" style="height: 40px; width: auto; border-radius: 5px;">
+                    <span>DIU Bogura Association</span>
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="committee.html">Committee</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="notices.html">Notices</a></li>
+                <li><a href="gallery.html" class="active">Gallery</a></li>
+                <li><a href="help.html">Help</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="events-page">
+        <!-- Hero Section -->
+        <section class="events-hero">
+            <div class="events-hero-content">
+                <span class="small-title">DIU BOGURA ASSOCIATION</span>
+                <h1>Photo Gallery</h1>
+                <p>Capturing the best moments, events, and memories of our association.</p>
+            </div>
+        </section>
+
+        <!-- Filter Buttons Section -->
+        <section class="events-intro">
+            <h2>Explore Our Moments</h2>
+            <p>Filter by category or click on any photo to view full size.</p>
+            
+            <div class="search-filter-wrapper">
+                <div class="filter-container">
+                    <button class="filter-btn active" onclick="filterGallery('all')">All Photos</button>
+                    <button class="filter-btn" onclick="filterGallery('events')">Events</button>
+                    <button class="filter-btn" onclick="filterGallery('members')">Members & Committee</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Grid -->
+        <div class="gallery-grid">
+            
+            <!-- Events Section -->
+            <div class="gallery-card" data-category="events" onclick="openLightbox('../images/events/alu-ghati-2026.png', 'Alu Ghati & Cultural Day 2026')">
+                <img src="../images/events/alu-ghati-2026.png" alt="Alu Ghati 2026" class="gallery-img">
+                <div class="gallery-overlay">
+                    <h3>Alu Ghati & Cultural Day</h3>
+                    <span>Events • 2026</span>
+                </div>
+            </div>
+
+            <div class="gallery-card" data-category="events" onclick="openLightbox('../images/events/iftar-2026.png', 'Iftar Mahfil 2026')">
+                <img src="../images/events/iftar-2026.png" alt="Iftar Mahfil 2026" class="gallery-img">
+                <div class="gallery-overlay">
+                    <h3>Iftar Mahfil 2026</h3>
+                    <span>Events • 2026</span>
+                </div>
+            </div>
+
+            <div class="gallery-card" data-category="events" onclick="openLightbox('../images/events/fresher-reception-2025.png', 'Fresher Reception 2025')">
+                <img src="../images/events/fresher-reception-2025.png" alt="Fresher Reception 2025" class="gallery-img">
+                <div class="gallery-overlay">
+                    <h3>Fresher Reception</h3>
+                    <span>Events • 2025</span>
+                </div>
+            </div>
+
+            <div class="gallery-card" data-category="events" onclick="openLightbox('../images/events/heritage-fair-2025.png', 'Heritage Fair 2025')">
+                <img src="../images/events/heritage-fair-2025.png" alt="Heritage Fair 2025" class="gallery-img">
+                <div class="gallery-overlay">
+                    <h3>Heritage Fair</h3>
+                    <span>Events • 2025</span>
+                </div>
+            </div>
+
+            <!-- Members Section (Matched with your file names) -->
+            <div class="gallery-card" data-category="members" onclick="openLightbox('../images/abdullah-al-jubair.png', 'Abdullah Al Jubair')">
+                <img src="../images/abdullah-al-jubair.png" alt="Abdullah Al Jubair" class="gallery-img">
+                <div class="gallery-overlay">
+                    <h3>Abdullah Al Jubair</h3>
+                    <span>Member</span>
+                </div>
+            </div>
+
+            <div class="gallery-card" data-category="members" onclick="openLightbox('../images/abdullah-al-sadik.png', 'Abdullah Al Sadik')">
+                <img src="../images/abdullah-al-sadik.png" alt="Abdullah Al Sadik" class="gallery-img">
+                <div class="gallery-overlay">
+                    <h3>Abdullah Al Sadik</h3>
+                    <span>Member</span>
+                </div>
+            </div>
+
+            <div class="gallery-card" data-category="members" onclick="openLightbox('../images/abdullah-bin-al-hasan.png', 'Abdullah Bin Al Hasan')">
+                <img src="../images/abdullah-bin-al-hasan.png" alt="Abdullah Bin Al Hasan" class="gallery-img">
+                <div class="gallery-overlay">
+                    <h3>Abdullah Bin Al Hasan</h3>
+                    <span>Member</span>
+                </div>
+            </div>
+
+            <div class="gallery-card" data-category="members" onclick="openLightbox('../images/abidur-rahman.jpg', 'Abidur Rahman')">
+                <img src="../images/abidur-rahman.jpg" alt="Abidur Rahman" class="gallery-img">
+                <div class="gallery-overlay">
+                    <h3>Abidur Rahman</h3>
+                    <span>Member</span>
+                </div>
+            </div>
+
+            <div class="gallery-card" data-category="members" onclick="openLightbox('../images/abu-sayem.jpg', 'Abu Sayem')">
+                <img src="../images/abu-sayem.jpg" alt="Abu Sayem" class="gallery-img">
+                <div class="gallery-overlay">
+                    <h3>Abu Sayem</h3>
+                    <span>Member</span>
+                </div>
+            </div>
+
+            <div class="gallery-card" data-category="members" onclick="openLightbox('../images/adnan-iqbal.jpg', 'Adnan Iqbal')">
+                <img src="../images/adnan-iqbal.jpg" alt="Adnan Iqbal" class="gallery-img">
+                <div class="gallery-overlay">
+                    <h3>Adnan Iqbal</h3>
+                    <span>Member</span>
+                </div>
+            </div>
+
+            <div class="gallery-card" data-category="members" onclick="openLightbox('../images/akib-mahmud.png', 'Akib Mahmud')">
+                <img src="../images/akib-mahmud.png" alt="Akib Mahmud" class="gallery-img">
+                <div class="gallery-overlay">
+                    <h3>Akib Mahmud</h3>
+                    <span>Member</span>
+                </div>
+            </div>
+
+            <div class="gallery-card" data-category="members" onclick="openLightbox('../images/alfaz-hossain-ovi.png', 'Alfaz Hossain Ovi')">
+                <img src="../images/alfaz-hossain-ovi.png" alt="Alfaz Hossain Ovi" class="gallery-img">
+                <div class="gallery-overlay">
+                    <h3>Alfaz Hossain Ovi</h3>
+                    <span>Member</span>
+                </div>
+            </div>
+
+            <div class="gallery-card" data-category="members" onclick="openLightbox('../images/aoulad-hossain-alif.png', 'Aoulad Hossain Alif')">
+                <img src="../images/aoulad-hossain-alif.png" alt="Aoulad Hossain Alif" class="gallery-img">
+                <div class="gallery-overlay">
+                    <h3>Aoulad Hossain Alif</h3>
+                    <span>Member</span>
+                </div>
+            </div>
+
+            <div class="gallery-card" data-category="members" onclick="openLightbox('../images/arifin-sumon.png', 'Arifin Sumon')">
+                <img src="../images/arifin-sumon.png" alt="Arifin Sumon" class="gallery-img">
+                <div class="gallery-overlay">
+                    <h3>Arifin Sumon</h3>
+                    <span>Member</span>
+                </div>
+            </div>
+
+            <div class="gallery-card" data-category="members" onclick="openLightbox('../images/arman-hossen-ripon.png', 'Arman Hossen Ripon')">
+                <img src="../images/arman-hossen-ripon.png" alt="Arman Hossen Ripon" class="gallery-img">
+                <div class="gallery-overlay">
+                    <h3>Arman Hossen Ripon</h3>
+                    <span>Member</span>
+                </div>
+            </div>
+
+            <div class="gallery-card" data-category="members" onclick="openLightbox('../images/arpon-bakshi.png', 'Arpon Bakshi')">
+                <img src="../images/arpon-bakshi.png" alt="Arpon Bakshi" class="gallery-img">
+                <div class="gallery-overlay">
+                    <h3>Arpon Bakshi</h3>
+                    <span>Member</span>
+                </div>
+            </div>
+
+            <div class="gallery-card" data-category="members" onclick="openLightbox('../images/arshiya-azmayen.png', 'Arshiya Azmayen')">
+                <img src="../images/arshiya-azmayen.png" alt="Arshiya Azmayen" class="gallery-img">
+                <div class="gallery-overlay">
+                    <h3>Arshiya Azmayen</h3>
+                    <span>Member</span>
+                </div>
+            </div>
+
+            <div class="gallery-card" data-category="members" onclick="openLightbox('../images/ashraful-alam.jpg', 'Ashraful Alam')">
+                <img src="../images/ashraful-alam.jpg" alt="Ashraful Alam" class="gallery-img">
+                <div class="gallery-overlay">
+                    <h3>Ashraful Alam</h3>
+                    <span>Member</span>
+                </div>
+            </div>
+
+            <div class="gallery-card" data-category="members" onclick="openLightbox('../images/atik-shahoriar-adib.png', 'Atik Shahoriar Adib')">
+                <img src="../images/atik-shahoriar-adib.png" alt="Atik Shahoriar Adib" class="gallery-img">
+                <div class="gallery-overlay">
+                    <h3>Atik Shahoriar Adib</h3>
+                    <span>Member</span>
+                </div>
+            </div>
+
+            <div class="gallery-card" data-category="members" onclick="openLightbox('../images/atiqur-rahman.png', 'Atiqur Rahman')">
+                <img src="../images/atiqur-rahman.png" alt="Atiqur Rahman" class="gallery-img">
+                <div class="gallery-overlay">
+                    <h3>Atiqur Rahman</h3>
+                    <span>Member</span>
+                </div>
+            </div>
+
+            <div class="gallery-card" data-category="members" onclick="openLightbox('../images/ayesha-afrin-achol.jpg', 'Ayesha Afrin Achol')">
+                <img src="../images/ayesha-afrin-achol.jpg" alt="Ayesha Afrin Achol" class="gallery-img">
+                <div class="gallery-overlay">
+                    <h3>Ayesha Afrin Achol</h3>
+                    <span>Member</span>
+                </div>
+            </div>
+
+            <div class="gallery-card" data-category="members" onclick="openLightbox('../images/azizul-hakim-nirob.png', 'Azizul Hakim Nirob')">
+                <img src="../images/azizul-hakim-nirob.png" alt="Azizul Hakim Nirob" class="gallery-img">
+                <div class="gallery-overlay">
+                    <h3>Azizul Hakim Nirob</h3>
+                    <span>Member</span>
+                </div>
+            </div>
+
+            <div class="gallery-card" data-category="members" onclick="openLightbox('../images/gajiul-islam.jpg', 'Gajiul Islam')">
+                <img src="../images/gajiul-islam.jpg" alt="Gajiul Islam" class="gallery-img">
+                <div class="gallery-overlay">
+                    <h3>Gajiul Islam</h3>
+                    <span>Member</span>
+                </div>
+            </div>
+
+            <div class="gallery-card" data-category="members" onclick="openLightbox('../images/hasan-shaikh.png', 'Hasan Shaikh')">
+                <img src="../images/hasan-shaikh.png" alt="Hasan Shaikh" class="gallery-img">
+                <div class="gallery-overlay">
+                    <h3>Hasan Shaikh</h3>
+                    <span>Member</span>
+                </div>
+            </div>
+
+            <div class="gallery-card" data-category="members" onclick="openLightbox('../images/mehedi-hasan-junior.png', 'Mehedi Hasan Junior')">
+                <img src="../images/mehedi-hasan-junior.png" alt="Mehedi Hasan Junior" class="gallery-img">
+                <div class="gallery-overlay">
+                    <h3>Mehedi Hasan Junior</h3>
+                    <span>Member</span>
+                </div>
+            </div>
+
+            <div class="gallery-card" data-category="members" onclick="openLightbox('../images/mehedi-hasan.jpg', 'Mehedi Hasan')">
+                <img src="../images/mehedi-hasan.jpg" alt="Mehedi Hasan" class="gallery-img">
+                <div class="gallery-overlay">
+                    <h3>Mehedi Hasan</h3>
+                    <span>Member</span>
+                </div>
+            </div>
+
+            <div class="gallery-card" data-category="members" onclick="openLightbox('../images/minhajul-ahmed-mitul.png', 'Minhajul Ahmed Mitul')">
+                <img src="../images/minhajul-ahmed-mitul.png" alt="Minhajul Ahmed Mitul" class="gallery-img">
+                <div class="gallery-overlay">
+                    <h3>Minhajul Ahmed Mitul</h3>
+                    <span>Member</span>
+                </div>
+            </div>
+
+            <div class="gallery-card" data-category="members" onclick="openLightbox('../images/mridul-islam.png', 'Mridul Islam')">
+                <img src="../images/mridul-islam.png" alt="Mridul Islam" class="gallery-img">
+                <div class="gallery-overlay">
+                    <h3>Mridul Islam</h3>
+                    <span>Member</span>
+                </div>
+            </div>
+
+            <div class="gallery-card" data-category="members" onclick="openLightbox('../images/mushfiqul-islam-ruhit.png', 'Mushfiqul Islam Ruhit')">
+                <img src="../images/mushfiqul-islam-ruhit.png" alt="Mushfiqul Islam Ruhit" class="gallery-img">
+                <div class="gallery-overlay">
+                    <h3>Mushfiqul Islam Ruhit</h3>
+                    <span>Member</span>
+                </div>
+            </div>
+
+            <div class="gallery-card" data-category="members" onclick="openLightbox('../images/nishat-tasnin.png', 'Nishat Tasnin')">
+                <img src="../images/nishat-tasnin.png" alt="Nishat Tasnin" class="gallery-img">
+                <div class="gallery-overlay">
+                    <h3>Nishat Tasnin</h3>
+                    <span>Member</span>
+                </div>
+            </div>
+
+            <div class="gallery-card" data-category="members" onclick="openLightbox('../images/reduan-islam.png', 'Reduan Islam')">
+                <img src="../images/reduan-islam.png" alt="Reduan Islam" class="gallery-img">
+                <div class="gallery-overlay">
+                    <h3>Reduan Islam</h3>
+                    <span>Member</span>
+                </div>
+            </div>
+
+            <div class="gallery-card" data-category="members" onclick="openLightbox('../images/rokonuzzaman-rocky.png', 'Rokonuzzaman Rocky')">
+                <img src="../images/rokonuzzaman-rocky.png" alt="Rokonuzzaman Rocky" class="gallery-img">
+                <div class="gallery-overlay">
+                    <h3>Rokonuzzaman Rocky</h3>
+                    <span>Member</span>
+                </div>
+            </div>
+
+            <div class="gallery-card" data-category="members" onclick="openLightbox('../images/sabbiur-rahman.jpg', 'Sabbiur Rahman')">
+                <img src="../images/sabbiur-rahman.jpg" alt="Sabbiur Rahman" class="gallery-img">
+                <div class="gallery-overlay">
+                    <h3>Sabbiur Rahman</h3>
+                    <span>Member</span>
+                </div>
+            </div>
+
+            <div class="gallery-card" data-category="members" onclick="openLightbox('../images/sadik-al-bari.jpg', 'Sadik Al Bari')">
+                <img src="../images/sadik-al-bari.jpg" alt="Sadik Al Bari" class="gallery-img">
+                <div class="gallery-overlay">
+                    <h3>Sadik Al Bari</h3>
+                    <span>Member</span>
+                </div>
+            </div>
+
+            <div class="gallery-card" data-category="members" onclick="openLightbox('../images/sadman-sadik-shihab.jpg', 'Sadman Sadik Shihab')">
+                <img src="../images/sadman-sadik-shihab.jpg" alt="Sadman Sadik Shihab" class="gallery-img">
+                <div class="gallery-overlay">
+                    <h3>Sadman Sadik Shihab</h3>
+                    <span>Member</span>
+                </div>
+            </div>
+
+            <div class="gallery-card" data-category="members" onclick="openLightbox('../images/saidi-hasan-rimon.png', 'Saidi Hasan Rimon')">
+                <img src="../images/saidi-hasan-rimon.png" alt="Saidi Hasan Rimon" class="gallery-img">
+                <div class="gallery-overlay">
+                    <h3>Saidi Hasan Rimon</h3>
+                    <span>Member</span>
+                </div>
+            </div>
+
+            <div class="gallery-card" data-category="members" onclick="openLightbox('../images/salman-saifi-chowdhury.png', 'Salman Saifi Chowdhury')">
+                <img src="../images/salman-saifi-chowdhury.png" alt="Salman Saifi Chowdhury" class="gallery-img">
+                <div class="gallery-overlay">
+                    <h3>Salman Saifi Chowdhury</h3>
+                    <span>Member</span>
+                </div>
+            </div>
+
+            <div class="gallery-card" data-category="members" onclick="openLightbox('../images/shaharia-haque-rifat.png', 'Shaharia Haque Rifat')">
+                <img src="../images/shaharia-haque-rifat.png" alt="Shaharia Haque Rifat" class="gallery-img">
+                <div class="gallery-overlay">
+                    <h3>Shaharia Haque Rifat</h3>
+                    <span>Member</span>
+                </div>
+            </div>
+
+            <div class="gallery-card" data-category="members" onclick="openLightbox('../images/shoyab-siddik.jpg', 'Shoyab Siddik')">
+                <img src="../images/shoyab-siddik.jpg" alt="Shoyab Siddik" class="gallery-img">
+                <div class="gallery-overlay">
+                    <h3>Shoyab Siddik</h3>
+                    <span>Member</span>
+                </div>
+            </div>
+
+            <div class="gallery-card" data-category="members" onclick="openLightbox('../images/tanvir-ahmed.png', 'Tanvir Ahmed')">
+                <img src="../images/tanvir-ahmed.png" alt="Tanvir Ahmed" class="gallery-img">
+                <div class="gallery-overlay">
+                    <h3>Tanvir Ahmed</h3>
+                    <span>Member</span>
+                </div>
+            </div>
+
+            <div class="gallery-card" data-category="members" onclick="openLightbox('../images/tasin-mahmud.png', 'Tasin Mahmud')">
+                <img src="../images/tasin-mahmud.png" alt="Tasin Mahmud" class="gallery-img">
+                <div class="gallery-overlay">
+                    <h3>Tasin Mahmud</h3>
+                    <span>Member</span>
+                </div>
+            </div>
+
+            <div class="gallery-card" data-category="members" onclick="openLightbox('../images/tm-tanvir.png', 'TM Tanvir')">
+                <img src="../images/tm-tanvir.png" alt="TM Tanvir" class="gallery-img">
+                <div class="gallery-overlay">
+                    <h3>TM Tanvir</h3>
+                    <span>Member</span>
+                </div>
+            </div>
+
+            <div class="gallery-card" data-category="members" onclick="openLightbox('../images/yeasir-rahman-soptak.png', 'Yeasir Rahman Soptak')">
+                <img src="../images/yeasir-rahman-soptak.png" alt="Yeasir Rahman Soptak" class="gallery-img">
+                <div class="gallery-overlay">
+                    <h3>Yeasir Rahman Soptak</h3>
+                    <span>Member</span>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Interactive Lightbox Modal -->
+    <div id="lightbox" class="modal-lightbox" onclick="closeLightbox()">
+        <span class="close-lightbox">&times;</span>
+        <img id="lightbox-img" src="" alt="Full View">
+        <div id="lightbox-caption" class="modal-caption"></div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="events-footer">
+        <p>© 2026 DIU Bogura Association. All Rights Reserved.</p>
+    </footer>
+
+    <!-- JavaScript Logic -->
+    <script>
+        function filterGallery(category) {
+            const cards = document.querySelectorAll('.gallery-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        function openLightbox(src, title) {
+            const lightbox = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            const caption = document.getElementById('lightbox-caption');
+
+            img.src = src;
+            caption.innerText = title;
+            lightbox.classList.add('active');
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+        }
+    </script>
+</body>
+</html>
