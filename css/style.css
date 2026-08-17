@@ -1,9 +1,4 @@
-/* ================================
-   DIU Bogura Association
-   Main Stylesheet
-================================ */
 
-/* ---------- Basic Reset ---------- */
 
 * {
     margin: 0;
@@ -23,7 +18,7 @@ body {
 }
 
 
-/* ---------- Navigation Bar ---------- */
+
 
 header {
     background: #0b2d5c;
@@ -69,7 +64,6 @@ nav {
 }
 
 
-/* ---------- Hero Section ---------- */
 
 .hero {
     min-height: 570px;
@@ -109,7 +103,7 @@ nav {
 }
 
 
-/* ---------- Button ---------- */
+
 
 .btn {
     display: inline-block;
@@ -132,7 +126,7 @@ nav {
 }
 
 
-/* ---------- Common Sections ---------- */
+
 
 .container,
 .about,
@@ -161,7 +155,6 @@ nav {
 }
 
 
-/* ---------- Service Cards ---------- */
 
 .service-container {
     margin-top: 35px;
@@ -198,7 +191,6 @@ nav {
 }
 
 
-/* ---------- Committee Grid & Poster Cards ---------- */
 
 .grid-container {
     display: grid;
@@ -232,7 +224,6 @@ nav {
 }
 
 
-/* Hover Effect */
 
 .card:hover {
     transform: translateY(-8px);
@@ -246,7 +237,6 @@ nav {
 }
 
 
-/* ---------- Footer ---------- */
 
 footer {
     background: #071d3b;
@@ -260,7 +250,6 @@ footer p {
 }
 
 
-/* ---------- Responsive Design ---------- */
 
 @media (max-width: 900px) {
 
