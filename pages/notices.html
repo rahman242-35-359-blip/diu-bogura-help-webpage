@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notices | DIU Bogura Association</title>
+    <link rel="stylesheet" href="../css/notices.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="../index.html" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: white;">
+                    <img src="../images/logo.jpg" alt="Logo" class="logo-img" style="height: 40px; width: auto; border-radius: 5px;">
+                    <span>DIU Bogura Association</span>
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="committee.html">Committee</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="notices.html" class="active">Notices</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="help.html">Help</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="events-page">
+        <!-- Hero Section -->
+        <section class="events-hero">
+            <div class="events-hero-content">
+                <span class="small-title">DIU BOGURA ASSOCIATION</span>
+                <h1>Our Notices</h1>
+                <p>Stay updated with official announcements, committee declarations, and important updates.</p>
+            </div>
+        </section>
+
+        <!-- Search & Filter Section -->
+        <section class="events-intro">
+            <h2>Official Announcements & News</h2>
+            <p>Browse through our latest notices and committee documents below.</p>
+            
+            <div class="search-filter-wrapper">
+                <input type="text" id="searchInput" class="notice-search-input" placeholder="Search notices...">
+                <div class="filter-container">
+                    <button class="filter-btn active" data-category="all">All</button>
+                    <button class="filter-btn" data-category="committee">Committee</button>
+                    <button class="filter-btn" data-category="announcement">Announcement</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Notices Wrapper -->
+        <div class="cards-wrapper">
+            
+            <!-- NOTICE 01 (Alu Ghati Postponed Notice - Latest) -->
+            <article class="event-card notice-card" data-category="announcement">
+                <div class="event-image notice-image">
+                    <img src="../images/events/alu-ghati-2026.png" alt="Alu Ghati Event Postponed Notice">
+                    <span class="date-badge notice-badge" style="background-color: #d90429;">POSTPONED</span>
+                </div>
+                <div class="event-content notice-content">
+                    <span class="event-category notice-category" style="color: #d90429;">IMPORTANT ANNOUNCEMENT</span>
+                    <h2>Alu Ghati & Cultural Day Postponed</h2>
+                    <p class="notice-date" style="font-weight: 600; color: #666; font-size: 0.9rem; margin-bottom: 8px;">17 August 2026</p>
+                    <p>This is to inform all members that the upcoming <strong>Alu Ghati & Cultural Day</strong> event has been postponed due to unavoidable circumstances.</p>
+                    <p>The new date and updated schedule for the event will be announced very soon. We sincerely apologize for any inconvenience caused.</p>
+                    <div class="event-info notice-footer">
+                        <span>📢 Event Update</span>
+                        <span>📍 DIU Bogura Association</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- NOTICE 02 (Executive Committee Approval Page 1) -->
+            <article class="event-card notice-card" data-category="committee">
+                <div class="event-image notice-image committee-image">
+                    <img src="../images/notices/committee-page-1.png" alt="DIU Bogura Association Executive Committee - Page 1">
+                    <span class="date-badge notice-badge">COMMITTEE</span>
+                </div>
+                <div class="event-content notice-content">
+                    <span class="event-category notice-category">OFFICIAL ANNOUNCEMENT</span>
+                    <h2>New Executive Committee Approved</h2>
+                    <p class="notice-date" style="font-weight: 600; color: #666; font-size: 0.9rem; margin-bottom: 8px;">16 July 2026</p>
+                    <p>The new Executive Committee of <strong>DIU Bogura Association</strong> has been officially approved for the next one-year term, effective from 16 July 2026.</p>
+                    <p>We warmly congratulate all the appointed members and wish them success in their responsibilities.</p>
+                    <div class="event-info notice-footer">
+                        <span>🏛️ Executive Committee</span>
+                        <span>Term: 2026–2027</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- NOTICE 03 (Executive Committee Member Details Page 2) -->
+            <article class="event-card notice-card committee-card" data-category="committee">
+                <div class="event-image notice-image committee-image">
+                    <img src="../images/notices/committee-page-2.png" alt="DIU Bogura Association Executive Committee - Page 2">
+                    <span class="date-badge notice-badge">COMMITTEE</span>
+                </div>
+                <div class="event-content notice-content">
+                    <span class="event-category notice-category">OFFICIAL ANNOUNCEMENT</span>
+                    <h2>Executive Committee Member List & Designation</h2>
+                    <p class="notice-date" style="font-weight: 600; color: #666; font-size: 0.9rem; margin-bottom: 8px;">16 July 2026</p>
+                    <p>Detailed list of office bearers, advisors, and executive members assigned to the <strong>DIU Bogura Association</strong> for 2026–2027.</p>
+                    <p>Click on the image preview to view the complete official approval document and list of members.</p>
+                    <div class="event-info notice-footer">
+                        <span>📄 Committee Member List</span>
+                        <span>Term: 2026–2027</span>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </main>
+
+    <!-- Modal Lightbox for Image Preview -->
+    <div id="imageModal" class="modal">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="imgFull">
+    </div>
+
+    <!-- Footer -->
+    <footer class="events-footer">
+        <p>© 2026 DIU Bogura Association. All Rights Reserved.</p>
+    </footer>
+
+    <script src="../js/notices.js"></script>
+</body>
+</html>

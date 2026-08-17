@@ -1,17 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Events | DIU Bogura Association</title>
-
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/notices.css">
 </head>
-
 <body>
-   <!-- Navigation Bar -->
+
+    <!-- Navigation Bar -->
     <header>
         <nav>
             <div class="logo">
@@ -24,7 +21,7 @@
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="committee.html">Committee</a></li>
-                <li><a href="events.html">Events</a></li>
+                <li><a href="events.html" class="active">Events</a></li>
                 <li><a href="notices.html">Notices</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
                 <li><a href="help.html">Help</a></li>
@@ -33,308 +30,82 @@
         </nav>
     </header>
 
-
-    <!-- Events Page -->
+    <!-- Main Content -->
     <main class="events-page">
-
-
         <!-- Hero Section -->
-
         <section class="events-hero">
-
             <div class="events-hero-content">
-
-                <span class="small-title">
-                    DIU BOGURA ASSOCIATION
-                </span>
-
-                <h1>
-                    Our Events
-                </h1>
-
-                <p>
-                    Celebrating our roots, building friendships,
-                    and creating unforgettable memories together.
-                </p>
-
+                <span class="small-title">DIU BOGURA ASSOCIATION</span>
+                <h1>Our Events</h1>
+                <p>Celebrating our roots, building friendships, and creating unforgettable memories together.</p>
             </div>
-
         </section>
 
-
-        <!-- Introduction -->
-
+        <!-- Search & Filter Section -->
         <section class="events-intro">
-
-            <h2>
-                Memories That Bring Us Together
-            </h2>
-
-            <p>
-                From cultural celebrations and community gatherings
-                to traditional food festivals and student programs,
-                every event of DIU Bogura Association reflects our
-                friendship, heritage and sense of family.
-            </p>
-
+            <h2>Memories That Bring Us Together</h2>
+            <p>From cultural celebrations and community gatherings to traditional food festivals, stay updated with us.</p>
+            
+            <div class="search-filter-wrapper">
+                <input type="text" id="searchInput" class="notice-search-input" placeholder="Search events...">
+                <div class="filter-container">
+                    <button class="filter-btn active" data-category="all">All</button>
+                    <button class="filter-btn" data-category="community">Community</button>
+                    <button class="filter-btn" data-category="culture">Culture</button>
+                </div>
+            </div>
         </section>
 
-
-        <!-- ================= EVENT 01 ================= -->
-
-        <article class="event-card">
-
-            <div class="event-image">
-
-                <img
-                    src="../images/events/iftar-2026.png"
-                    alt="Iftar Mahfil 2026">
-
-                <span class="date-badge">
-                    04 MAR 2026
-                </span>
-
-            </div>
-
-
-            <div class="event-content">
-
-                <span class="event-category">
-                    Community & Religious Event
-                </span>
-
-                <h2>
-                    Iftar Mahfil 2026
-                </h2>
-
-                <p>
-                    Ramadan brought us together once again.
-                    DIU Bogura Association organized a beautiful
-                    Iftar Mahfil where students from Bogura shared
-                    an evening of food, prayer and friendship.
-                </p>
-
-                <p>
-                    More than an Iftar, it was a moment to reconnect
-                    with our hometown community and feel the warmth
-                    of a family away from home.
-                </p>
-
-
-                <div class="event-info">
-
-                    <span>📍 Daffodil International University</span>
-
-                    <span>🍽️ Iftar & Dinner</span>
-
-                    <span>🤝 Community</span>
-
+        <!-- Cards Container -->
+        <div class="cards-wrapper">
+            <!-- Event 01 -->
+            <article class="event-card notice-card" data-category="community">
+                <div class="event-image">
+                    <img src="../images/events/iftar-2026.png" alt="Iftar Mahfil 2026">
+                    <span class="date-badge">04 MAR 2026</span>
                 </div>
-
-              
-            </div>
-
-        </article>
-
-
-        <!-- ================= EVENT 02 ================= -->
-
-        <article class="event-card">
-
-            <div class="event-image">
-
-                <img
-                    src="../images/events/heritage-fair-2025.png"
-                    alt="Bogura Heritage Fair">
-
-                <span class="date-badge">
-                    23 NOV 2025
-                </span>
-
-            </div>
-
-
-            <div class="event-content">
-
-                <span class="event-category">
-                    Culture & Heritage
-                </span>
-
-                <h2>
-                    Bogura Heritage & Culture Fair
-                </h2>
-
-                <p>
-                    DIU Bogura Association proudly participated
-                    in Heritage Fair – Episode 4, organized by
-                    the Department of Innovation and Entrepreneurship.
-                </p>
-
-                <p>
-                    The event allowed us to showcase the rich
-                    heritage, traditional culture, history and
-                    identity of Bogura to the wider DIU community.
-                </p>
-
-
-                <div class="event-info">
-
-                    <span>🏛️ Heritage Fair</span>
-
-                    <span>🎭 Culture</span>
-
-                    <span>📍 DIU</span>
-
+                <div class="event-content">
+                    <span class="event-category notice-category">Community & Religious Event</span>
+                    <h2>Iftar Mahfil 2026</h2>
+                    <p>Ramadan brought us together once again. DIU Bogura Association organized a beautiful Iftar Mahfil.</p>
+                    <div class="event-info">
+                        <span>📍 Daffodil International University</span>
+                        <span>🍽️ Iftar & Dinner</span>
+                    </div>
                 </div>
+            </article>
 
-                
-
-
-            </div>
-
-        </article>
-
-
-        <!-- ================= EVENT 03 ================= -->
-
-        <article class="event-card">
-
-            <div class="event-image">
-
-                <img
-                    src="../images/events/fresher-reception-2025.png"
-                    alt="Fresher Reception 2025">
-
-                <span class="date-badge">
-                    23 OCT 2025
-                </span>
-
-            </div>
-
-
-            <div class="event-content">
-
-                <span class="event-category">
-                    Student Community
-                </span>
-
-                <h2>
-                    Fresher Reception 2025
-                </h2>
-
-                <p>
-                    A warm welcome to the new members of the
-                    DIU Bogura family.
-                </p>
-
-                <p>
-                    The reception brought together the 252 and
-                    253 batches with senior students, creating
-                    an opportunity to build new friendships and
-                    become part of the association.
-                </p>
-
-
-                <div class="event-info">
-
-                    <span>🎓 Fresher Reception</span>
-
-                    <span>🤝 Networking</span>
-
-                    <span>📍 Bonmaya 2</span>
-
+            <!-- Event 02 -->
+            <article class="event-card notice-card" data-category="culture">
+                <div class="event-image">
+                    <img src="../images/events/alu-ghati-2026.png" alt="Alu Ghati Event 2026">
+                    <span class="date-badge">14 AUG 2026</span>
                 </div>
-
-                
-                
-
-            </div>
-
-        </article>
-
-
-        <!-- ================= EVENT 04 ================= -->
-
-        <article class="event-card">
-
-            <div class="event-image">
-
-                <img
-                    src="../images/events/alu-ghati-2026.png"
-                    alt="Alu Ghati Event 2026">
-
-                <span class="date-badge">
-                    14 AUG 2026
-                </span>
-
-            </div>
-
-
-            <div class="event-content">
-
-                <span class="event-category">
-                    Food • Culture • Fun
-                </span>
-
-                <h2>
-                    Alu Ghati & Cultural Day
-                </h2>
-
-                <p>
-                    An unforgettable day filled with adda,
-                    delicious traditional Alu Ghati and doi,
-                    cultural performances and exciting games.
-                </p>
-
-                <p>
-                    The event celebrated the food, culture and
-                    joyful spirit of Bogura while bringing
-                    everyone together as one family.
-                </p>
-
-
-                <div class="event-info">
-
-                    <span>🥔 Alu Ghati & Doi</span>
-
-                    <span>🎵 Cultural Program</span>
-
-                    <span>🎮 Games</span>
-
-                    <span>📍 Model Town</span>
-
+                <div class="event-content">
+                    <span class="event-category notice-category">Food • Culture • Fun</span>
+                    <h2>Alu Ghati & Cultural Day</h2>
+                    <p>An unforgettable day filled with adda, delicious traditional Alu Ghati and doi, cultural performances and games.</p>
+                    <div class="event-info">
+                        <span>🥔 Alu Ghati & Doi</span>
+                        <span>🎮 Games</span>
+                    </div>
+                    <div class="event-fee">Registration Fee: <strong>200 BDT</strong></div>
                 </div>
-
-
-                <div class="event-fee">
-                    Registration Fee:
-                    <strong>200 BDT</strong>
-                </div>
-
-
-                
-
-            </div>
-
-        </article>
-
+            </article>
+        </div>
     </main>
 
+    <!-- Modal Lightbox -->
+    <div id="imageModal" class="modal">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="imgFull">
+    </div>
 
     <!-- Footer -->
-
     <footer class="events-footer">
-
-        <p>
-            © 2026 DIU Bogura Association.
-            All Rights Reserved.
-        </p>
-
+        <p>© 2026 DIU Bogura Association. All Rights Reserved.</p>
     </footer>
 
-
-    <script src="../js/script.js"></script>
-
+    <script src="../js/notices.js"></script>
 </body>
-
 </html>
