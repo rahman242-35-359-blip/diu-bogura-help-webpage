@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | DIU Bogura Association</title>
+    <link rel="stylesheet" href="../css/contact.css">
+    <!-- Font Awesome Icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Header Navigation Bar -->
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="../index.html" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: white;">
+                    <img src="../images/logo.jpg" alt="Logo" class="logo-img" style="height: 40px; width: auto; border-radius: 5px;" onerror="this.onerror=null; this.src='../images/logo.png';">
+                    <span>DIU Bogura Association</span>
+                </a>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="committee.html">Committee</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="notices.html">Notices</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="help.html">Help</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="contact-page">
+        <!-- Hero Section -->
+        <section class="contact-hero">
+            <div class="contact-hero-content">
+                <span class="small-title">GET IN TOUCH</span>
+                <h1>Contact & Join Community</h1>
+                <p>Connect with DIU Bogura Association or join our official WhatsApp community group.</p>
+            </div>
+        </section>
+
+        <!-- Main Content Section -->
+        <section class="contact-container">
+            <!-- Left Column: Contact Form -->
+            <div class="contact-form-card">
+                <h2>Join Our WhatsApp Group</h2>
+                <p>Fill in your information below to get added to our official student group.</p>
+
+                <form action="https://formspree.io/f/mdenwaww" method="POST" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address">Address in Bogura (বগুড়ায় কোথায় বাসা)</label>
+                        <input type="text" id="address" name="bogura_address" placeholder="e.g. Jaltauli, Seujgari, Sherpur" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="whatsapp">WhatsApp Phone Number</label>
+                        <input type="tel" id="whatsapp" name="whatsapp_number" placeholder="01XXXXXXXXX" required>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Request to Join Group</button>
+                    <div id="contactFormStatus" class="form-status"></div>
+                </form>
+            </div>
+
+            <!-- Right Column: Info & Social Links -->
+            <div class="contact-info-cards">
+                <!-- Facebook Card -->
+                <div class="info-card fb-card">
+                    <div class="info-icon">
+                        <i class="fa-brands fa-facebook"></i>
+                    </div>
+                    <div class="info-details">
+                        <h3>Official Facebook Page</h3>
+                        <p>Follow our page for daily updates, events, and notices.</p>
+                        <a href="https://www.facebook.com/profile.php?id=100089359437729" target="_blank" class="info-link">
+                            <i class="fa-brands fa-facebook-f"></i> Visit Facebook Page
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Emergency Contact Card -->
+                <div class="info-card phone-card">
+                    <div class="info-icon">
+                        <i class="fa-solid fa-phone-volume"></i>
+                    </div>
+                    <div class="info-details">
+                        <h3>Public Relations Secretary</h3>
+                        <p>For urgent queries, information, or direct communication.</p>
+                        <a href="tel:01967344149" class="info-link phone-link">
+                            <i class="fa-solid fa-phone"></i> 01967344149
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="events-footer">
+        <p>© 2026 DIU Bogura Association. All Rights Reserved.</p>
+    </footer>
+
+    <script src="../js/contact.js"></script>
+</body>
+</html>
